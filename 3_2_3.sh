@@ -1,0 +1,1 @@
+awk '{if(NR>1){total=$3+$4+$5;printf("%s %d\n",$1,total)}}' marks.txt

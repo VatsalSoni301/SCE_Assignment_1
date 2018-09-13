@@ -1,0 +1,1 @@
+sed -n '/^\([[:alpha:]]\).*\1$/p' /usr/share/dict/words

@@ -1,0 +1,1 @@
+grep -i '.*[[:punct:]].*' /usr/share/dict/words

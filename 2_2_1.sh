@@ -1,0 +1,1 @@
+sed -nE '/Anycity/p' < address-book.csv | sed -nE 's/([^,]*),(.*)/\1/p'

@@ -1,0 +1,1 @@
+grep '^\([[:alpha:]]\).*\1$' /usr/share/dict/words
