@@ -24,6 +24,7 @@ qq=0
 r=0
 s=0
 a=1
+arr[$x,$y]=1;
 while [ $a == 1 ]
 do 
 	while [ $a == 1 ]
@@ -45,6 +46,7 @@ do
 			tput clear
 			((x = t_x / 2 ))
 			((y = t_y / 2 ))
+			arr[$x,$y]=1
 			tput cup $x $y
 		fi
 		if [ $y == 0 ] || [ $y == $t_y ]
@@ -62,6 +64,7 @@ do
 			s=0
 			((x = t_x / 2 ))
 			((y = t_y / 2 ))
+			arr[$x,$y]=1
 			tput clear
 			tput cup $x $y
 		fi
@@ -85,13 +88,14 @@ do
 					s=0
 					((x = t_x / 2 ))
 					((y = t_y / 2 ))
+					arr[$x,$y]=1
 					tput clear
 					tput cup $x $y
 				else
-					tput cup $x $y
 					arr[$x,$y]=1
 					let "q=$RANDOM % 256"
 					echo -en "\e[38;5;${q}m* \e[0m";
+					tput cup $x $y
 				fi
 			elif [ $qq == 1 ]
 			then
@@ -111,13 +115,14 @@ do
 				s=0
 				((x = t_x / 2 ))
 				((y = t_y / 2 ))
+				arr[$x,$y]=1
 				tput clear
 				tput cup $x $y
 				else
-					tput cup $x $y
 					arr[$x,$y]=1
 					let "q=$RANDOM % 256"
 					echo -en "\e[38;5;${q}m* \e[0m";
+					tput cup $x $y
 				fi
 			elif [ $r == 1 ]
 			then
@@ -137,13 +142,14 @@ do
 				s=0
 				((x = t_x / 2 ))
 				((y = t_y / 2 ))
+				arr[$x,$y]=1
 				tput clear
 				tput cup $x $y
 				else
-					tput cup $x $y
 					arr[$x,$y]=1
 					let "q=$RANDOM % 256"
 					echo -en "\e[38;5;${q}m*\e[0m";
+					tput cup $x $y
 				fi
 			elif [ $s == 1 ]
 			then
@@ -163,19 +169,19 @@ do
 				s=0
 				((x = t_x / 2 ))
 				((y = t_y / 2 ))
+				arr[$x,$y]=1
 				tput clear
 				tput cup $x $y
 				else
-					tput cup $x $y
 					arr[$x,$y]=1
 					let "q=$RANDOM % 256"
 					echo -en "\e[38;5;${q}m*\e[0m";
+					tput cup $x $y
 				fi
 			fi
 		fi
 		case "$key" in
 	    A) ((x=$x-1))
-			tput cup $x $y
 			p=1
 			qq=0
 			r=0
@@ -195,12 +201,14 @@ do
 				s=0
 				((x = t_x / 2 ))
 				((y = t_y / 2 ))
+				arr[$x,$y]=1
 				tput clear
 				tput cup $x $y
 			else
 				arr[$x,$y]=1
 				let "q=$RANDOM % 256"
 				echo -en "\e[38;5;${q}m*\e[0m";
+				tput cup $x $y
 			fi
 			;;
 	    B) ((x=$x+1))
@@ -208,7 +216,6 @@ do
 			qq=1
 			r=0
 			s=0
-			tput cup $x $y
 			if [ "${arr[$x,$y]}" == "1" ]
 			then
 				for ((i=0;i<t_x;i++))
@@ -224,16 +231,17 @@ do
 				s=0
 				((x = t_x / 2 ))
 				((y = t_y / 2 ))
+				arr[$x,$y]=1
 				tput clear
 				tput cup $x $y
 			else
 				arr[$x,$y]=1
 				let "q=$RANDOM % 256"
 				echo -en "\e[38;5;${q}m*\e[0m";
+				tput cup $x $y
 			fi
 			;;
 		C) ((y=$y+1))
-			tput cup $x $y
 			p=0
 			qq=0
 			r=1
@@ -253,16 +261,17 @@ do
 				s=0
 				((x = t_x / 2 ))
 				((y = t_y / 2 ))
+				arr[$x,$y]=1
 				tput clear
 				tput cup $x $y
 			else
 				arr[$x,$y]=1
 				let "q=$RANDOM % 256"
 				echo -en "\e[38;5;${q}m*\e[0m";
+				tput cup $x $y
 			fi
 			;;
 		D) ((y=$y-1))
-			tput cup $x $y
 			p=0
 			qq=0
 			r=0
@@ -282,12 +291,14 @@ do
 				s=0
 				((x = t_x / 2 ))
 				((y = t_y / 2 ))
+				arr[$x,$y]=1
 				tput clear
 				tput cup $x $y
 			else
 				arr[$x,$y]=1
 				let "q=$RANDOM % 256"
 				echo -en "\e[38;5;${q}m*\e[0m";
+				tput cup $x $y
 			fi
 			;;
 	esac
