@@ -14,4 +14,5 @@ sudo openvpn --config ubuntu.ovpn --auth-user-pass vpnpass.txt --daemon
 #sudo resolvconf -u
 sudo chmod 777 /etc/resolv.conf;
 sudo echo $dns > /etc/resolv.conf;
+echo
 echo "VPN started"
